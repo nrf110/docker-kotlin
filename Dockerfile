@@ -1,4 +1,4 @@
-FROM azul/zulu-openjdk-alpine:17-latest
+FROM azul/zulu-openjdk-alpine:11-latest
 
 ARG KOTLIN_VERSION=1.8.20
 
