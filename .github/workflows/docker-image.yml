@@ -7,14 +7,13 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     environment: dockerhub
     steps:
     - uses: actions/checkout@v3
     - name: Echo
-      run: echo "${DOCKER_USER}:${DOCKER_PASSWORD}"
+      run: echo "creds:${DOCKER_USER}:${DOCKER_PASSWORD} ${MYVAR}"
     - name: Docker Login
       run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
