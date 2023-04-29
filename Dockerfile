@@ -3,6 +3,7 @@ FROM azul/zulu-openjdk-debian:17-latest
 ARG KOTLIN_VERSION=1.8.20
 
 RUN cd /usr/lib && \
+  apt install -y wget && \
   wget -O kotlin-compiler.zip "https://github.com/JetBrains/kotlin/releases/download/v${KOTLIN_VERSION}/kotlin-compiler-${KOTLIN_VERSION}.zip" && \
   unzip kotlin-compiler.zip && \
   rm -f kotlin-compiler.zip && \
