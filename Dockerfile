@@ -1,6 +1,6 @@
-FROM openjdk:11-jdk-buster
+FROM openjdk:17-jdk-buster
 
-ARG KOTLIN_VERSION=1.5.31
+ARG KOTLIN_VERSION=1.8.20
 
 RUN cd /usr/lib && \
   wget -O kotlin-compiler.zip "https://github.com/JetBrains/kotlin/releases/download/v${KOTLIN_VERSION}/kotlin-compiler-${KOTLIN_VERSION}.zip" && \
