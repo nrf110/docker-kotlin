@@ -1,10 +1,10 @@
-FROM azul/zulu-openjdk-alpine:11-latest
+FROM azul/zulu-openjdk-debian:11-latest
 
 ARG KOTLIN_VERSION=1.8.20
 
 RUN cd /usr/lib && \
-  apk update && \
-  apk add wget && \
+  apt-get update && \
+  apt-get install -y wget && \
   wget -O kotlin-compiler.zip "https://github.com/JetBrains/kotlin/releases/download/v${KOTLIN_VERSION}/kotlin-compiler-${KOTLIN_VERSION}.zip" && \
   unzip kotlin-compiler.zip && \
   rm -f kotlin-compiler.zip && \
