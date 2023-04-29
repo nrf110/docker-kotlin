@@ -1,4 +1,4 @@
-FROM openjdk:17-jdk-buster
+FROM azul/zulu-openjdk-debian:17-latest
 
 ARG KOTLIN_VERSION=1.8.20
 
