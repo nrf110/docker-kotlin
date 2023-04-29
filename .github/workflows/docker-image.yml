@@ -1,4 +1,7 @@
 name: Docker Image CI
+env:
+  DOCKER_USER: {{ secrets.DOCKER_USER }}
+  DOCKER_PASSWORD: {{ secrets.DOCKER_PASSWORD }}
 
 on:
   push:
@@ -8,9 +11,6 @@ on:
 
 jobs:
   build:
-    env:
-      DOCKER_USER: {{ secrets.DOCKER_USER }}
-      DOCKER_PASSWORD: {{ secrets.DOCKER_PASSWORD }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
